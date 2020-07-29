@@ -15,7 +15,7 @@ const randChoice = (data) => {
 }
 
 
-for(let i = 0; i <= 20; i++) {
+for(let i = 1; i <= 20; i++) {
     const randGender = randChoice(gender);
     let randFirstName = '';
     const randLastName = randChoice(lastName);
@@ -31,6 +31,7 @@ for(let i = 0; i <= 20; i++) {
 
 
     const personalData = {
+        id: i,
         gender: randGender,
         firstName: randFirstName,
         lastName: randLastName,
