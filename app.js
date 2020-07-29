@@ -15,20 +15,19 @@ const randChoice = (data) => {
 }
 
 
-for(let i = 1; i <= 20; i++) {
+for (let i = 1; i <= 20; i++) {
     const randGender = randChoice(gender);
     let randFirstName = '';
     const randLastName = randChoice(lastName);
     const randAge = Math.floor(Math.random() * (78 - 18 + 1) + 18);
 
-    if(randGender === 'M') {
-        randFirstName = randChoice(maleFirstName)
+    if (randGender === 'M') {
+        randFirstName = randChoice(maleFirstName);
     } else {
-        randFirstName = randChoice(femaleFirstName)
+        randFirstName = randChoice(femaleFirstName);
     };
 
-    const randEmail = `${randFirstName}.${randLastName}@gmail.com`
-
+    const randEmail = `${randFirstName}.${randLastName}@gmail.com`;
 
     const personalData = {
         id: i,
@@ -37,12 +36,11 @@ for(let i = 1; i <= 20; i++) {
         lastName: randLastName,
         age: randAge,
         email: randEmail.toLowerCase(),
-    }
-
+    };
     people.push(personalData);
-}
+};
 
 fs.writeFile('data.json', JSON.stringify(people), 'utf8', (err) => {
     if (err) throw err;
     console.log('The file has been saved!');
-  });
+});
